@@ -1,0 +1,92 @@
+.timetable-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+  background-color: #1a1a1a;
+  color: #fff;
+  border-radius: 20px;
+}
+
+.timetable-container h1, .timetable-container h2 {
+  color: #00bfff;
+  text-align: center;
+}
+
+.timetable-container label {
+  color: #fff;
+  font-size: 16px;
+}
+
+.timetable-container input[type="number"] {
+  background-color: #333;
+  color: #fff;
+  padding: 15px 10px;
+  outline: 0;
+  border: 1px solid rgba(105, 105, 105, 0.397);
+  border-radius: 10px;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.timetable-container button {
+  border: none;
+  outline: none;
+  padding: 12px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 16px;
+  background-color: #00bfff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.timetable-container button:hover {
+  background-color: #00bfff96;
+}
+
+.display-timetable {
+  margin-top: 20px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-bordered {
+  border: 1px solid #333;
+}
+
+.table thead th {
+  background-color: #00bfff;
+  color: #fff;
+  padding: 10px;
+  border: 1px solid #333;
+}
+
+.table tbody td {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  border: 1px solid #333;
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: #2a2a2a;
+}
+
+.table tbody tr:hover {
+  background-color: #444;
+}
+
+.table div {
+  padding: 5px;
+}
+
+.table small {
+  display: block;
+  color: #bbb;
+}

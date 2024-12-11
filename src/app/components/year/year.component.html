@@ -1,0 +1,96 @@
+<div class="year-container">
+  <div class="form-container"><br>
+    <h1>Enter Details To Add New Year</h1><br>
+    <form (ngSubmit)="addYear()">
+      <div class="form-group">
+        <input type="number" [(ngModel)]="newYear.yearNumber" name="yearNumber" required class="input-field" placeholder=" ">
+        <label class="input-label">Enter Number of Year</label><br>
+        <div class="input-highlight"></div>
+      </div>
+      <div class="form-group">
+        <input type="number" [(ngModel)]="newYear.numberOfClassrooms" name="numberOfClassrooms" required class="input-field" placeholder=" ">
+        <label class="input-label">Enter Total number Of Classrooms</label><br>
+        <div class="input-highlight"></div>
+      </div>
+      <div class="form-group">
+        <input type="number" [(ngModel)]="newYear.numberOfSubjects" name="numberOfSubjects" required class="input-field" placeholder=" ">
+        <label class="input-label">Enter Total Number Of Subjects for Year</label><br>
+        <div class="input-highlight"></div>
+      </div>
+      <div class="form-group">
+        <input type="number" [(ngModel)]="newYear.numberOfDays" name="numberOfDays" required class="input-field" placeholder=" ">
+        <label class="input-label">Enter Total Number Of Days for Week</label><br>
+        <div class="input-highlight"></div>
+      </div>
+      <div class="form-group">
+        <input type="number" [(ngModel)]="newYear.slotsPerDay" name="slotsPerDay" required class="input-field" placeholder=" ">
+        <label class="input-label">Enter Number of Slots Per Day For Year</label><br>
+        <div class="input-highlight"></div>
+      </div>
+      <button type="submit">Add</button>
+    </form>
+  </div>
+
+  <div class="form-container">
+    <form *ngIf="selectedYear" (ngSubmit)="updateYear()">
+      <h2>Update Year</h2>
+      <div class="form-group">
+        <input type="number" [(ngModel)]="updatedYear.yearNumber" name="yearNumber" required class="input-field" placeholder=" ">
+        <label class="input-label">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enter Number of Year</label><br>
+        <div class="input-highlight"></div>
+      </div>
+      <div class="form-group">
+        <input type="number" [(ngModel)]="updatedYear.numberOfClassrooms" name="numberOfClassrooms" required class="input-field" placeholder=" ">
+        <label class="input-label">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enter Total number Of Classrooms</label><br>
+        <div class="input-highlight"></div>
+      </div>
+      <div class="form-group">
+        <input type="number" [(ngModel)]="updatedYear.numberOfSubjects" name="numberOfSubjects" required class="input-field" placeholder=" ">
+        <label class="input-label">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enter Total Number Of Subjects for Year</label><br>
+        <div class="input-highlight"></div>
+      </div>
+      <div class="form-group">
+        <input type="number" [(ngModel)]="updatedYear.numberOfDays" name="numberOfDays" required class="input-field" placeholder=" ">
+        <label class="input-label">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enter Total Number Of Days for Week</label><br>
+        <div class="input-highlight"></div>
+      </div>
+      <div class="form-group">
+        <input type="number" [(ngModel)]="updatedYear.slotsPerDay" name="slotsPerDay" required class="input-field" placeholder=" ">
+        <label class="input-label">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enter Number of Slots Per Day For Year</label><br>
+        <div class="input-highlight"></div>
+      </div>
+      <button type="submit">Update</button>
+    </form>
+  </div>
+
+  <div class="year-list">
+    <h2>List Of Added Years</h2>
+    <table class="year-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Year Number</th>
+          <th>Classrooms Count</th>
+          <th>Subjects Count</th>
+          <th>Days Count</th>
+          <th>Slots Count</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let year of years">
+          <td>{{year.id}}</td>
+          <td>{{year.yearNumber}}</td>
+          <td>{{year.numberOfClassrooms}}</td>
+          <td>{{year.numberOfSubjects}}</td>
+          <td>{{year.numberOfDays}}</td>
+          <td>{{year.slotsPerDay}}</td>
+          <td>
+            <button (click)="selectYear(year)">Edit</button>&nbsp;
+            <button (click)="deleteYear(year.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

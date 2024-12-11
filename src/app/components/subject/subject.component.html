@@ -1,0 +1,62 @@
+<div class="subject-container">
+  <div class="subject-form">
+    <h1>Subjects Management</h1>
+    <form (submit)="subjectForm.id ? updateSubject() : createSubject()">
+      <div class="form-group input-container">
+        <input [(ngModel)]="subjectForm.name" name="name" id="name" required class="input-field" />
+        <label for="name" class="input-label">Subject Name</label>
+        <div class="input-highlight"></div>
+      </div>
+      <div class="form-group input-container">
+        <label for="slotsRequired" >Slots Required</label>
+        <input [(ngModel)]="subjectForm.slotsRequired" name="slotsRequired" id="slotsRequired" required type="number" class="input-field" />
+     </div>
+
+      <div class="form-group input-container">
+        <label for="year">For Which Year Subject is there</label>  
+        <select [(ngModel)]="subjectForm.year" name="year" id="year" required class="input-field" >
+          <!-- Assume a list of Year options are available -->
+          <option *ngFor="let year of yearList" [ngValue]="year">{{ year.yearNumber }}</option>
+        </select>
+      </div>
+
+      <div class="form-group input-container">
+        <label for="teachers">Select Multiple Teachers For Subjects</label>
+        <select  [(ngModel)]="subjectForm.teachers" name="teachers" id="teachers" multiple class="input-field">
+          <!-- Assume a list of Teacher options are available -->
+          <option *ngFor="let teacher of teacherList" [ngValue]="teacher">{{ teacher.name }}</option>
+        </select>
+      </div>
+
+      <button type="submit">{{ subjectForm.id ? 'Update' : 'Create' }} Subject</button>
+    </form>
+  </div>
+
+  <!-- Table for displaying subjects -->
+  <table class="subject-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Slots Required</th>
+        <th>Year</th>
+        <th>Teachers</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let subject of subjects">
+        <td>{{ subject.name }}</td>
+        <td>{{ subject.slotsRequired }}</td>
+        <td>{{ subject.year.yearNumber }}</td>
+        <td>
+          <ul *ngFor="let teacher of subject.teachers">{{ teacher.name }}
+          </ul>
+        </td>
+        <td>
+          <button (click)="selectSubject(subject)">Edit</button>&nbsp;&nbsp;
+          <button (click)="deleteSubject(subject.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,41 @@
+<div class="timetable-container">
+  <h1>Timetable Slots</h1>
+  
+  <label for="yearId">Year ID:</label>
+  <input type="number" [(ngModel)]="yearId" id="yearId" />
+  <button (click)="generateTimetable()">Generate Timetable</button>
+
+  <div class="display-timetable">
+    <h2 class="text-center mb-4">Timetable List</h2>
+    <div *ngFor="let key of uniqueTimetables | keyvalue">
+      <h3 class="my-3">Classroom {{ key.value[0]?.classroom?.classroomNumber }} for Year {{yearId}}</h3>
+      <table class="table table-bordered timetable-table">
+        <thead class="thead-light">
+          <tr>
+            <th>Day/Slot</th>
+            <th *ngFor="let slot of slotsPerDayArray">Slot {{ slot + 1 }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let day of daysArray">
+            <td>Day {{ day + 1 }}</td>
+            <td *ngFor="let slot of slotsPerDayArray">
+              <ng-container *ngIf="getSubjects(key.value, day, slot) as subjects">
+                <ng-container *ngFor="let subject of subjects">
+                  <div>{{ subject?.subject?.name }}<br><small>({{ subject?.teacher?.name }})</small></div>
+                </ng-container>
+              </ng-container>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <h2>All Timetable Slots</h2>
+  <ul>
+    <li *ngFor="let slot of timetables">
+      ID : {{slot.id}}, Day: {{slot.day}}, Slot: {{slot.slot}}, Classroom: {{slot.classroom?.classroomNumber}}, 
+      Subject: {{slot.subject?.name}}, Teacher: {{slot.teacher?.name}}
+    </li>
+  </ul>
+</div>

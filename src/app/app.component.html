@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Time Craft</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/years" routerLinkActive="active">Years</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/classrooms" routerLinkActive="active">Classrooms</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/teachers" routerLinkActive="active">Teachers</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/subjects" routerLinkActive="active">Subjects</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/timetables" routerLinkActive="active">Timetables</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container mt-4">
+  <router-outlet></router-outlet>
+</div>

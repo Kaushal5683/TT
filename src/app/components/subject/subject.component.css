@@ -1,0 +1,120 @@
+.subject-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+  background-color: #1a1a1a;
+  color: #fff;
+  border-radius: 20px;
+}
+
+.subject-form {
+  background-color: #2a2a2a;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.subject-form h1 {
+  color: #00bfff;
+  text-align: center;
+}
+
+.subject-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.input-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-field {
+  background-color: #333;
+  color: #fff;
+  padding: 15px 10px;
+  outline: 0;
+  border: 1px solid rgba(105, 105, 105, 0.397);
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.input-label {
+  color: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.9em;
+  pointer-events: none;
+  transition: 0.3s ease;
+}
+
+.input-field:placeholder-shown + .input-label {
+  top: 35%;
+  transform: translateY(-50%);
+  font-size: 20px;
+}
+
+.input-field:focus + .input-label,
+.input-field:valid + .input-label {
+  color: #00bfff;
+  top: 0px;
+  font-size: 0.75em;
+  font-weight: 600;
+}
+
+button[type="submit"] {
+  border: none;
+  outline: none;
+  padding: 12px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 16px;
+  background-color: #00bfff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #00bfff96;
+}
+
+.subject-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #fff;
+  margin-top: 20px;
+}
+
+.subject-table th, .subject-table td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #333;
+}
+
+.subject-table th {
+  background-color: #00bfff;
+}
+
+.subject-table td {
+  background-color: #333;
+}
+
+.subject-table button {
+  background-color: #00bfff;
+  border: none;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.subject-table button:hover {
+  background-color: #00bfff96;
+}

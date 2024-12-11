@@ -1,0 +1,121 @@
+/* Navbar Styling */
+.navbar-dark {
+    background-color: #343a40;
+  }
+  
+  .navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffffff;
+  }
+  
+  .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 0.5%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  }
+  
+  .navbar-nav .nav-item .nav-link {
+    color: #ffffff;
+    font-size: 1.1rem;
+    margin-right: 1rem;
+  }
+  
+  .navbar-nav .nav-item .nav-link.active {
+    color: #ffc107;
+  }
+  
+  /* Container Styling */
+  .container {
+    margin-top: 2rem;
+  }
+  
+  /* Additional Styling */
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    color: #343a40;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive Styling */
+  @media (max-width: 992px) {
+    .navbar-nav .nav-item .nav-link {
+      margin-right: 0;
+      margin-bottom: 0.5rem;
+    }
+  
+    .navbar-collapse {
+      text-align: center;
+    }
+  }
+/* Navbar Styling */
+.navbar-dark {
+  background-color: #343a40;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 0.5%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.navbar-nav .nav-item .nav-link {
+  color: #ffffff;
+  font-size: 1.1rem;
+  margin-right: 1rem;
+}
+
+.navbar-nav .nav-item .nav-link.active {
+  color: #ffc107;
+}
+
+/* Container Styling */
+.container {
+  margin-top: 2rem;
+}
+
+/* Additional Styling */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa;
+  color: #343a40;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Styling */
+@media (max-width: 992px) {
+  .navbar-nav .nav-item .nav-link {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .navbar-collapse {
+    text-align: center;
+  }
+}
+  

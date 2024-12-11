@@ -1,0 +1,55 @@
+<div class="classroom-container">
+  <div class="form-container">
+    <h1>Create or Update Classroom</h1><br>
+    <div class="formField">
+      <label>Classroom Number</label>
+      <input
+        type="number"
+        id="classroomNumber"
+        [(ngModel)]="selectedClassroom.classroomNumber"
+        required class="input-field"
+      />
+      <div class="input-highlight"></div>
+    </div>
+
+    <div class="formField">
+      <label>Year ID</label>
+      <input
+        type="number"
+        id="year"
+        [(ngModel)]="selectedClassroom.year.id"
+        required class="input-field"
+      />
+      
+      <div class="input-highlight"></div>
+    </div><br>
+
+    <div class="button-group">
+      <button (click)="createClassroom()">Create Classroom</button>
+      <button (click)="updateClassroom()">Update Classroom</button>
+    </div>
+  </div>
+
+  <div class="classroom-list">
+    <h2>Classrooms List</h2>
+    <table class="classroom-table">
+      <thead>
+        <tr>
+          <th>Classroom Number</th>
+          <th>Year</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let classroom of classrooms">
+          <td>{{ classroom.classroomNumber }}</td>
+          <td>{{ classroom.year.yearNumber }}</td>
+          <td>
+              <button (click)="selectClassroom(classroom)">Edit</button>&nbsp;&nbsp;
+              <button (click)="deleteClassroom(classroom.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
